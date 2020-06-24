@@ -2,11 +2,7 @@ const listElement = document.querySelector("main ul")
 const inputElement = document.querySelector("main input")
 const btnElement = document.querySelector("main button")
 
-const todos = [
-    "Fazer café",
-    "Estudar",
-    "Criar site"
-]
+const todos = JSON.parse(localStorage.getItem('list_todos')) || []
 
 function renderTodos() {
     listElement.innerHTML = ''
@@ -33,6 +29,7 @@ function addTodo() {
     todos.push(text)
     inputElement.value = ''
     renderTodos()
+    saveToStorage()
 }
 
 btnElement.onclick  = addTodo
@@ -40,4 +37,9 @@ btnElement.onclick  = addTodo
 function deleteTodo(pos) {
     todos.splice(pos, 1)
     renderTodos()
+    saveToStorage()
+}
+
+function saveToStorage() {
+    localStorage.setItem('list_todos', JSON.stringify(todos))
 }
