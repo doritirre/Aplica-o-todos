@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header h1{
+    text-align: center;
+    margin-top: 25px;    
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+main ul {
+    margin-top: 25px;    
+}
+
+main ul li {
+    font-size: 20px;
+    list-style-type: circle;
+}
+
+main ul li a{
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+main ul li a:hover {
+    color: crimson;
+    transition: 600ms;
+}
